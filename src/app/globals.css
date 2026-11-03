@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  --font-mono: "Cascadia Code", ui-monospace, Consolas, "Courier New", monospace;
+
+  --color-navy-950: #0b1424;
+  --color-navy-900: #14243b;
+  --color-navy-800: #1c3150;
+  --color-navy-700: #22344f;
+  --color-teal: #5fb3c4;
+  --color-teal-dark: #2f7f94;
+  --color-steel: #7c93c9;
+  --color-lavender: #9a8cc4;
+  --color-ok: #3f9b74;
+  --color-bad: #c0504d;
+  --color-warn: #c4a86b;
+}
+
+:root {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #5b6676;
+  --line: #e2e7ee;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --card: #131c2b;
+    --text: #eef2f7;
+    --muted: #93a1b5;
+    --line: #22344f;
+    color-scheme: dark;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.hero-grid {
+  background-image:
+    radial-gradient(ellipse at 85% 10%, rgb(124 147 201 / 0.22), transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgb(95 179 196 / 0.14), transparent 55%),
+    linear-gradient(#22344f55 1px, transparent 1px),
+    linear-gradient(90deg, #22344f55 1px, transparent 1px),
+    linear-gradient(135deg, #0b1424, #14243b);
+  background-size: auto, auto, 32px 32px, 32px 32px, auto;
+}
+
+.accent-bar {
+  background: linear-gradient(90deg, #5fb3c4, #7c93c9 55%, #9a8cc4);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-up { animation: fade-up 0.45s ease both; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.8s linear infinite; }
